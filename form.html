@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <style type="text/css">
+        .container{
+        position: fixed;
+        width:625px;
+        height:235px;
+        padding:10px;
+        top: 50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left: -300px;
+      }
+      </style>
+</head>
+<html>
+    <body background="file5.jpg" style="background-size:  1400px";>
+        <div class="card-header text-center">
+            <h1 style="color: dimgray;">BUKU TELEPON</h1>
+        </div>
+        <div class="container">
+            <div style="margin-top: 40px; margin-left: 80px" class="row">
+                <div class="col-lg-10">
+                <form action="insert.php" method="POST">
+                    <label>Nama</label><br>
+                    <input type="text" class="form-control" name="nama" ><br>
+                    <label>Email</label><br>
+                    <td><input type="email" class="form-control" name="email"><br></td>
+                    <label>Nomer telepon</label><br>
+                    <td><input type="tel" class="form-control" name="phone"><br></td>
+                    <label>Kota Alamat</label><br>
+                    <td><input type="text" class="form-control" name="alamat"><br></td>
+                    <center>
+                        <input type="submit" class="btn btn-secondary btn-lg" value="Save!">
+                    </center>
+                </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
