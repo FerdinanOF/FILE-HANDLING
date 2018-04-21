@@ -5,12 +5,24 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <script type="text/javascript" src="bootstrap.min.js"></script>
-    <style type="text/css">
-        .container{
+    <style>
+        container{
         position: fixed;
         top: 25%;
         left: 30%;
       }
+        table {
+        background-color: #C0C0C0;
+        border-collapse: collapse;
+        width: 100%;
+    }
+        th, td {
+        text-align: left;
+        padding: 15px;
+     }
+        tr:nth-child(even) {
+        background-color: #f2f2f2;
+        }
       </style>
 </head>
 <body background="file5.jpg" style="background-size:  1400px";>
@@ -18,20 +30,25 @@
             <h2 style="color: dimgray;">Daftar Nama Buku Telepon</h2>
         </div>
     <div class="container">
-        <table border="2">
+        
 
     <?php
     $file = "data.txt";
     $data = file_get_contents($file);
 
     $baris = explode("[R]", $data);
-
+    ?>
     
-    echo "<tr>";
-    echo "  <td>Nama</td><td>Email</td>";
-    echo "  <td>Phone</td><td>Alama</td><td>Action</td>";
-    echo "  <td>Edit</td>";
-    echo "</tr>";
+    <table>
+      <tr>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Alamat</th>
+        <th>Action</th>
+        <th>Edit</th>
+      </tr>
+   <?php
     for($i =0; $i<count($baris)-1; $i++) {
         //echo $b . "<br>";
 
@@ -52,4 +69,3 @@
 </div>
 </body>
 </html>
-
