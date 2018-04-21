@@ -9,8 +9,20 @@
         .container{
         position: fixed;
         top: 25%;
-        left: 40%;
-      }
+        left: 30%;
+      	}
+        table {
+        background-color: #C0C0C0;
+        border-collapse: collapse;
+        width: 40%;
+   	 	}
+        th, td {
+        text-align: left;
+        padding: 15px;
+     	}
+        tr:nth-child(even) {
+        background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body background="file4.jpg" style="background-size:  1400px";>
@@ -18,7 +30,8 @@
             <h2 style="color: dimgray;">Edit Kontak</h2>
     </div>
     <div class="container">
-        <table border="2">
+  
+		
 		<?php
 
 		$file = "data.txt";
@@ -32,38 +45,47 @@
 
 		    $col = explode("|F|", $kode[$i]);
 		}
-
-		echo "<form action=tide.php method=GET>";
-		echo "<table border=4>";
-		echo "<tr>";
-		echo "<td>Kode list</td><td><input type=text name=kode value=$rowdel readonly=readonly></td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "  <td>Nama</td><td><input type=text name=nama value=$col[0]></td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>Email</td><td><input type=email name=email value=$col[1]></td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>Phonenumber</td><td><input type=tel name=phone value=$col[2]></td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>Alamat</td><td><input type=text name=alamat value=$col[3]></td>";
-		echo "</tr>";
-
-		echo "<tr>
-		<td><input type=submit value=edit></td><td></td>
-		</tr>";
-		echo "</table>";
-		echo "</form>";
 		?>
+
+		<form action="tide.php" method="GET">
+			<table>
+		<tr>
+			<td>Kode list</td>
+			<td><?php echo "<input type=text name=kode value=$rowdel readonly=readonly>";?>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Nama</td>
+			<td><?php echo "<input type=text name=nama value=$col[0]>";?>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Email</td>
+			<td><?php echo "<input type=email name=email value= $col[1]";?>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Phonenumber</td>
+			<td><?php echo "<input type=tel name=phone value= $col[2]";?>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Alamat</td>
+			<td><?php echo "<input type=text name=alamat value= $col[3]"; ?>
+			</td>
+		</tr>
+
+		<tr>
+		<td><input type=submit value=edit></td><td></td>
+		</tr>
+
+		</form>
+			</table>
 	</table>
 </div>
 </body>
 </html>
-
-
-
-
-
-
